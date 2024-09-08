@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import Dashboard from './components/Dashboard';
-import ActivityForm from './components/ActivityForm';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LogActivityPage from './pages/LogActivityPage';
+import Header from './components/Header';
 
 function App() {
-  const [activities, setActivities] = useState([]);
-
-  const addActivity = (newActivity) => {
-    setActivities([...activities, newActivity]);
-  };
-
   return (
-    <div className="App">
-      <h1>Fitness Challenge Tracker</h1>
-      <ActivityForm addActivity={addActivity} />
-      <Dashboard activities={activities} />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/log-activity" element={<LogActivityPage />} />
+      </Routes>
+    </Router>
   );
 }
 

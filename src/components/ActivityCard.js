@@ -1,17 +1,16 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 
-function ActivityCard({ activity }) {
+const ActivityCard = ({ activity }) => {
   return (
-    <Card sx={{ margin: 2 }}>
+    <Card sx={{ mb: 2, p: 2, boxShadow: 3 }}>
       <CardContent>
-        <Typography variant="h5">Date: {activity.date}</Typography>
-        <Typography>Steps: {activity.steps}</Typography>
-        <Typography>Calories: {activity.calories}</Typography>
-        <Typography>Workout Time: {activity.workoutTime} mins</Typography>
+        <Typography variant="h6" gutterBottom>Steps: {activity.steps}</Typography>
+        <Typography variant="body1" color="textSecondary">Calories: {activity.calories}</Typography>
+        <Typography variant="body2" color="textSecondary">Workout Time: {activity.time} mins</Typography>
       </CardContent>
     </Card>
   );
-}
+};
 
 export default ActivityCard;
