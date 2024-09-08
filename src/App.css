@@ -1,38 +1,119 @@
-.App {
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+h1, h2 {
   text-align: center;
+  color: #1976d2; /* Material-UI primary color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form Styling */
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+form .MuiTextField-root {
+  width: 100%;
+  max-width: 400px;
+}
+
+form .MuiButton-root {
+  background-color: #1976d2;
   color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+form .MuiButton-root:hover {
+  background-color: #115293;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Dashboard Styling */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.Dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.Dashboard p {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Card Styling */
+.MuiCard-root {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MuiTypography-h5 {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.MuiTypography-body1 {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    padding: 15px;
+    box-shadow: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  form .MuiTextField-root {
+    max-width: 100%;
+  }
+
+  .Dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .MuiCard-root {
+    max-width: 100%;
   }
 }
